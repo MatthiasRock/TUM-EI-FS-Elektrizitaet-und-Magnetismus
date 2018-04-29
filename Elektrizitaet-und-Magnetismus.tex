@@ -1,0 +1,460 @@
+% #####################################################################
+% #####################################################################
+% ##                                                                 ##
+% ##                             Lizenz:                             ##
+% ##                         CC BY-NC-SA 3.0                         ##
+% ##      http://creativecommons.org/licenses/by-nc-sa/3.0/de/       ##
+% ##                                                                 ##
+% #####################################################################
+% ##   Diese Datei kann beliebig verändert werden, solange darauf    ##
+% ##     hingewiesen wird, dass dieses Dokument ursprünglich von     ##
+% ##                                                                 ##
+% ##                        www.ei-studium.de                        ##
+% ##                                                                 ##
+% ##                             stammt.                             ##
+% ## Dies gilt insbesondere auch für alle daraus erstellten Dateien. ##
+% ##    Des Weiteren muss die Weitergabe dieser Dateien unter der    ##
+% ##                    gleichen Lizenz erfolgen.                    ##
+% #####################################################################
+% #####################################################################
+\documentclass[a4paper,twocolumn,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[top=2.0cm,bottom=1.5cm,left=1.0cm,right=1.0cm]{geometry}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{sectsty}
+\usepackage{colortbl}
+\usepackage{cancel}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+
+\setlist{itemsep=.01mm}
+\setenumerate{label=\emph{\arabic*})}
+\setlength{\columnsep}{1cm}
+\parindent 0mm
+
+\partfont{\huge}
+\sectionfont{\Large \sc\bf}
+\subsectionfont{\normalsize}
+\subsubsectionfont{\small\textit}
+
+\pagestyle{fancy}
+\lhead[\leftmark]{Elektrizität und Magnetismus - Formeln}
+\chead[\leftmark]{\url{http://www.ei-studium.de}}
+\rhead[\leftmark]{Erstelldatum: \today}
+\lfoot[\leftmark]{Keine Garantie auf Vollständigkeit und Richtigkeit!}
+\cfoot[\leftmark]{}
+\rfoot[\leftmark]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\section{Elektrizität und Magnetismus}
+
+\subsection{Mathematik}
+\begin{enumerate}[label=$\bullet$]
+\item Wegintegral:
+\begin{equation*}
+ \int\limits_{C(P_1,P,2)}\overrightarrow{F}(\overrightarrow{r})d\overrightarrow{r}=\int\limits_{\lambda_0}^{\lambda_1}\overrightarrow{F}(\overrightarrow{r}(\lambda))\frac{d\overrightarrow{r}}{d \lambda}d \lambda
+\end{equation*}
+\item Integrabilitätsbedingung:
+\begin{equation*}
+\frac{\partial E_j}{\partial x_i}=\frac{\partial E_i}{\partial x_j}\Leftrightarrow \overrightarrow{F}(\overrightarrow{r})\;konservativ
+\end{equation*}
+\item Zylinderkoordinaten:
+\begin{equation*}
+h_r=1;\;\;h_{\varphi}=r;\;\;h_z=1;\;\;\varphi\in [0,2\pi]
+\end{equation*}
+\item Kugelkoordinaten:
+\begin{equation*}
+h_r=1;\;\;h_{\theta}=r;\;\;h_{\varphi}=r\sin(\theta)
+\end{equation*}
+\item Gradient:
+\begin{equation*}
+\nabla\Phi =\sum\limits_{i=1}^{n}\frac{1}{h_i}\frac{\partial\Phi}{\partial u_i}\overrightarrow{e}_{u_i}
+\end{equation*}
+\item Integralsatz von Gauß:
+\begin{equation*}
+\int\limits_{V}\nabla\overrightarrow{U}dv=\int\limits_{\partial V}\overrightarrow{U}d\overrightarrow{a}
+\end{equation*}
+\item Integralsatz von Stokes:
+\begin{equation*}
+\int\limits_{A}rot(\overrightarrow{U})d\overrightarrow{a}=\int\limits_{\partial A}\overrightarrow{U}d\overrightarrow{r}
+\end{equation*}
+\end{enumerate}
+
+\subsection{Elektrostatik}
+\begin{enumerate}[label=$\bullet$]
+\item
+\begin{equation*}
+\overrightarrow{F_q}(\overrightarrow{r})=\frac{q}{4\pi\epsilon}\sum\limits_{i=1}^{N}\frac{q_i}{|\overrightarrow{r}-\overrightarrow{r}_i|^3}\cdot (\overrightarrow{r}-\overrightarrow{r}_i)
+\end{equation*}
+\item
+\begin{equation*}
+\overrightarrow{F}_q(\overrightarrow{r})=q\cdot \overrightarrow{E}(\overrightarrow{r})
+\end{equation*}
+\item
+\begin{equation*}
+\overrightarrow{E}(\overrightarrow{r})=\frac{1}{4\pi\epsilon}\cdot\int\limits_{E_3}\frac{\overrightarrow{r}-\overrightarrow{r'}}{|\overrightarrow{r}-\overrightarrow{r'}|^3}\rho(\overrightarrow{r'})d^3r'
+\end{equation*}
+\item
+\begin{equation*}
+rot(\overrightarrow{E})=0\Leftrightarrow\overrightarrow{E}\;konservativ\Leftrightarrow\oint \overrightarrow{E}d\overrightarrow{r}=0
+\end{equation*}
+\item Coulomb-Potential:
+\begin{equation*}
+\Phi(\overrightarrow{r})=\frac{1}{4\pi\epsilon}\cdot\sum\limits_{i=1}^{N}\frac{q_i}{|\overrightarrow{r}-\overrightarrow{r_i}|}=\frac{1}{4\pi\epsilon}\int\limits_{E_3}\frac{\rho(\overrightarrow{r'})}{|\overrightarrow{r}-\overrightarrow{r'}|}d^3r'
+\end{equation*}
+\item 
+\begin{equation*}
+\overrightarrow{E}=-\nabla\Phi
+\end{equation*}
+\item
+\begin{equation*}
+\nabla\overrightarrow{D}=\rho\Rightarrow\nabla(\epsilon\overrightarrow{E})=\rho\Rightarrow\nabla\nabla\Phi=-\frac{\rho}{\epsilon}
+\end{equation*}
+$\Rightarrow$ Poissongleichung: $\Delta\Phi=-\frac{\rho}{\epsilon}$\\\\
+(Lösung: Coulomb-Potential im $E_3$)
+\item
+\begin{equation*}
+U_{12}=\Phi(P_1)-\Phi(P_2)=\int\limits_{P_1}^{P_2}\overrightarrow{E}d\overrightarrow{r}
+\end{equation*}
+\item
+\begin{equation*}
+\Phi(\overrightarrow{r})=\Phi(\overrightarrow{r}_0)-\int\limits_{P_0}^{P_1}\overrightarrow{E}d \overrightarrow{r}
+\end{equation*}
+\item
+\begin{equation*}
+W_{12}=\int\limits_{C}\overrightarrow{F}d\overrightarrow{r}=q\cdot U_{12}
+\end{equation*}
+\item
+\begin{equation*}
+\overrightarrow{D}\cdot\overrightarrow{N}=\sigma
+\end{equation*}
+\item
+\begin{equation*}
+\sigma =\frac{Q}{A}
+\end{equation*}
+\item
+\begin{equation*}
+ Q=\int\limits_{A}\sigma(\overrightarrow{r})da=\sum\limits_{\overrightarrow{r_i}\in V}q_i
+\end{equation*}
+\item Kapazität:
+\begin{equation*}
+C=\frac{Q}{U}
+\end{equation*}
+\item Kugelkondensator:
+\begin{equation*}
+C=4\pi\epsilon\frac{a\cdot b}{b-a}
+\end{equation*}
+\item
+\begin{equation*}
+W_{el}=\int\limits_{0}^{Q}u(q)dq=\frac{1}{2}CU^2=\frac{1}{2}\frac{Q^2}{C}
+\end{equation*}
+\item Elektrische Energiedichte:
+\begin{equation*}
+w_{el}=\frac{1}{2}\cdot\overrightarrow{E}\cdot\overrightarrow{D}
+\end{equation*}
+\item Raumladungsdichte
+\begin{equation*}
+\rho(\overrightarrow{r})=q\cdot n(\overrightarrow{r})
+\end{equation*}
+$n$: Anzahl Ladungsträger pro Volumen
+\item Unendlich langer zylindrischer Leiter:
+\begin{equation*}
+\overrightarrow{E}(\overrightarrow{r})=\frac{q}{2\pi\epsilon}\cdot\frac{\overrightarrow{r}-\overrightarrow{r}_0}{|\overrightarrow{r}-\overrightarrow{r}_0|^2}
+\end{equation*}
+\begin{equation*}
+\Phi(\overrightarrow{r})=-\frac{q}{2\pi\epsilon}\cdot ln|\overrightarrow{r}-\overrightarrow{r}_0|
+\end{equation*}
+\end{enumerate}
+
+\subsection{Stationäre Ströme}
+\begin{enumerate}[label=$\bullet$]
+\item
+\begin{equation*}
+I_A=\left.\frac{dQ}{dt}\right|_A
+\end{equation*}
+\item
+\begin{equation*}
+I(A)=\int\limits_{A}\overrightarrow{j}d\overrightarrow{a}
+\end{equation*}
+$\overrightarrow{j}$: Elektrische Stromdichte
+\item
+\begin{equation*}
+\overrightarrow{j}=\sum\limits_{\alpha=1}^{K}q_\alpha\cdot n_\alpha\cdot\overrightarrow{v}_\alpha=\sum\limits_{\alpha=1}^{K}|q_\alpha |\cdot n_\alpha\cdot\mu_\alpha\cdot\overrightarrow{E}
+\end{equation*}
+$\mu_\alpha$: Beweglichkeit
+\item Mittlere Driftgeschwindigkeit
+\begin{equation*}
+\overrightarrow{v}=\frac{q\cdot\tau}{m^*}\cdot\overrightarrow{E}=sgn(q)\mu\overrightarrow{E}
+\end{equation*}
+$\tau$: mittlere Stoßzeit\\
+$m^*$: effektive Masse\\
+$\mu$: Beweglichkeit
+\begin{equation*}
+\mu=\frac{|q|\tau}{m^*}
+\end{equation*}
+\item Spezifische el. Leitfähigkeit
+\begin{equation*}
+\sigma=\sum\limits_{\alpha=1}^{k}|q_\alpha |n_\alpha\mu_\alpha
+\end{equation*}
+\item Lokales Ohmsches Gesetz:
+\begin{equation*}
+\overrightarrow{j}=\sigma\cdot\overrightarrow{E}
+\end{equation*}
+\item Spezifischer el. Widerstand:
+\begin{equation*}
+\rho =\frac{1}{\sigma}
+\end{equation*}
+\item Elektrischer Leitwert
+\begin{equation*}
+G=\sigma\cdot\frac{A}{l}
+\end{equation*}
+\item Elektrischer Widerstand:
+\begin{equation*}
+R=\rho\cdot\frac{l}{A}
+\end{equation*}
+\item Ohmsches Gesetz
+\begin{equation*}
+U=R\cdot I
+\end{equation*}
+\item KCL:
+\begin{equation*}
+0=\int\limits_{\partial V}\overrightarrow{j}d\overrightarrow{a}=\sum\limits_{k=1}^{N}\int\limits_{A_k}\overrightarrow{j}d\overrightarrow{a}=\sum\limits_{k=1}^{N}I_k
+\end{equation*}
+\item Ladungsbilanzgleichung (integrale Form):
+\begin{equation*}
+\frac{dQ(V)}{dt}=-\int\limits_{\partial V}\overrightarrow{j}d\overrightarrow{a}
+\end{equation*}
+\item Ladungsbilanzgleichung (differentielle Form):
+\begin{equation*}
+\nabla\overrightarrow{j}+\frac{\partial \rho}{\partial t}=0
+\end{equation*}
+\item El. Leistung einer Punktladung:
+\begin{equation*}
+P_{el}=q\cdot\overrightarrow{E}\cdot\overrightarrow{v}
+\end{equation*}
+\item El. Leistungsdichte:
+\begin{equation*}
+p_{el}=\overrightarrow{j}\cdot\overrightarrow{E}
+\end{equation*}
+\item El. Leistung:
+\begin{equation*}
+P_{el}=\int\limits_{V}p_{el}(\overrightarrow{r})dv=U\cdot I=\frac{U^2}{R}=I^2\cdot R
+\end{equation*}
+\item El. Energieübertragungsstrecke:
+\begin{equation*}
+\eta =1-\frac{R_L\cdot P_E}{U_E^2}
+\end{equation*}
+\end{enumerate}
+
+\subsection{Magnetostatik}
+\begin{enumerate}[label=$\bullet$]
+\item Lorentzkraftdichte:
+\begin{equation*}
+\overrightarrow{f}_L=\overrightarrow{j}\times\overrightarrow{B}
+\end{equation*}
+\begin{equation*}
+\overrightarrow{f}_{em}=\rho\cdot\overrightarrow{E}+\overrightarrow{j}\times\overrightarrow{B}
+\end{equation*}
+$\rho$: Raumladungsdichte
+\item Lorentzkraft:
+\begin{equation*}
+\overrightarrow{F}_{Leiter}=\int\limits_{Leiter}\overrightarrow{f}_L d^3r
+\end{equation*}
+\begin{equation*}
+\overrightarrow{F}_L=q(\overrightarrow{v}\times\overrightarrow{B})
+\end{equation*}
+\item Kraft auf linienförmige Leiter:
+\begin{equation*}
+d\overrightarrow{F}_L=I\cdot d\overrightarrow{s}\times\overrightarrow{B}
+\end{equation*}
+\begin{equation*}
+\overrightarrow{F}_{Leiter}=\int\limits_{C}d\overrightarrow{F}_L
+\end{equation*}
+\item Elektromagn. Kraft:
+\begin{equation*}
+\overrightarrow{F}_{em}=q(\overrightarrow{E}+\overrightarrow{v}\times\overrightarrow{B})
+\end{equation*}
+\item Amperesches Durchflutungsgesetz:
+\begin{equation*}
+I(A)=\int\limits_{\partial A}\overrightarrow{H}d\overrightarrow{r}
+\end{equation*}
+\item Magnetfeld von unendlich langem Leiter:
+\begin{equation*}
+\overrightarrow{H}(\overrightarrow{r})=\frac{I}{2\pi r}\overrightarrow{e}_\varphi
+\end{equation*}
+\item Kraft auf Leiter beliebiger Gestalt:
+\begin{equation*}
+\overrightarrow{F}_{Leiter}=\int\limits_{Leiter}\overrightarrow{j}(\overrightarrow{r})\times\overrightarrow{B}(\overrightarrow{r})d^3r
+\end{equation*}
+\item Kraft auf linienförmige Leiter:
+\begin{equation*}
+\overrightarrow{F}_{Leiter}=\int\limits_{C}d\overrightarrow{F}_L;\;\;d\overrightarrow{F}_L=I\cdot d\overrightarrow{s}\times\overrightarrow{B}
+\end{equation*}
+\item Magnetisches Moment
+\begin{equation*}
+\overrightarrow{m}=I\cdot\overrightarrow{A}
+\end{equation*}
+\begin{equation*}
+\overrightarrow{m}=V\cdot\mathcal{M}
+\end{equation*}
+$\mathcal{M}$: Magnetisierung
+\item Drehmoment:
+\begin{equation*}
+\overrightarrow{M}=(\overrightarrow{r}-\overrightarrow{r}_0)\times\overrightarrow{F}=\overrightarrow{m}\times\overrightarrow{B}
+\end{equation*}
+\item Permanentmagnet:
+\begin{equation*}
+\mathcal{M}=n\cdot <\overrightarrow{m_0}>
+\end{equation*}
+$<\overrightarrow{m_0}>$: Mittelwert der atomaren magn. Momente\\
+$n$: Anzahl pro Volumen\\
+\item 
+\begin{equation*}
+\mathcal{M}=\mathcal{X}_m\cdot\overrightarrow{H}
+\end{equation*}
+\begin{equation*}
+\mu_r=1+\mathcal{X}_m
+\end{equation*}
+$\mathcal{X}_m$: magnetische Suszeptibilität
+\end{enumerate}
+
+\subsection{Induktion}
+\begin{enumerate}[label=$\bullet$]
+\item Magnetischer Fluss:
+\begin{equation*}
+\Phi_{mag}=\int\limits_{A}\overrightarrow{B}d\overrightarrow{a}
+\end{equation*}
+\item Induktionsspannung:
+\begin{equation*}
+U_{ind}=-\dot{\Phi}_{mag}
+\end{equation*}
+\begin{equation*}
+\overrightarrow{E}_{ind}=\overrightarrow{v}\times\overrightarrow{B}
+\end{equation*}
+\begin{equation*}
+U_{ind}=\underbrace{-\int\limits_{A(t)}\frac{\partial \overrightarrow{B}}{\partial t}d\overrightarrow{a}}_{Ruheinduktion}+\underbrace{\int\limits_{\partial A(t)}\overrightarrow{v}\times\overrightarrow{B}d\overrightarrow{r}}_{Bewegungsinduktion}=-\dot{\Phi(A(t))}
+\end{equation*}
+\end{enumerate}
+
+\subsection{Maxwellsche Gleichungen}
+
+\subsubsection{Integrale Form}
+\begin{enumerate}[label=$\bullet$]
+\item
+\begin{equation*}
+\int\limits_{\partial V}\overrightarrow{D}d\overrightarrow{a}=\int\limits_{V}\nabla\overrightarrow{D}dv=Q(V)=\int\limits_{V}\rho(\overrightarrow{r})dv
+\end{equation*}
+\item
+\begin{equation*}
+\int\limits_{\partial V}\overrightarrow{B}d\overrightarrow{a}=0
+\end{equation*}
+\item
+\begin{equation*}
+\int\limits_{\partial A}\overrightarrow{E}_{ind,r}d\overrightarrow{r}=-\int\limits_{A}\frac{\partial\overrightarrow{B}}{\partial t}d\overrightarrow{a}
+\end{equation*}
+\item Erweiterung des Ampere'schen Gesetzes:
+\begin{equation*}
+\int\limits_{\partial A}\overrightarrow{H}d\overrightarrow{r}=\int\limits_{A}\overrightarrow{j}+\frac{\partial \overrightarrow{D}}{\partial t}d\overrightarrow{a}
+\end{equation*}
+\end{enumerate}
+
+\subsubsection{Differentielle Form}
+\begin{enumerate}[label=$\bullet$]
+\item Gauß'sches Gesetz
+\begin{equation*}
+\nabla\overrightarrow{D}=\rho
+\end{equation*}
+\item Quellenfreiheit des $\overrightarrow{B}$-Feldes
+\begin{equation*}
+\nabla\overrightarrow{B}=0
+\end{equation*}
+\item Faraday'sches Induktionsgesetz
+\begin{equation*}
+rot(\overrightarrow{E})=-\frac{\partial \overrightarrow{B}}{\partial t}
+\end{equation*}
+\item Ampere'sches Durchflutungsgesetz
+\begin{equation*}
+rot(\overrightarrow{H})=\overrightarrow{j}+\frac{\partial \overrightarrow{D}}{\partial t}
+\end{equation*}
+\end{enumerate}
+
+\subsection{Materialgleichungen}
+\begin{enumerate}[label=$\bullet$]
+\item
+\begin{equation*}
+\overrightarrow{D}=\epsilon\overrightarrow{E}
+\end{equation*}
+\item
+\begin{equation*}
+\overrightarrow{B}=\mu\overrightarrow{H}
+\end{equation*}
+\item
+\begin{equation*}
+\overrightarrow{j}=\sigma\overrightarrow{E}
+\end{equation*}
+\end{enumerate}
+
+\subsection{Einheiten}
+\begin{enumerate}[label=$\bullet$]
+\item Elektrische Leitfähigkeit
+\begin{equation*}
+[\sigma]=\frac{1}{\Omega m}=\frac{A^2s^3}{m^3kg}
+\end{equation*}
+\item Beweglichkeit
+\begin{equation*}
+[\mu]=\frac{m^2}{Vs}=\frac{As^2}{kg}
+\end{equation*}
+\item Absolute Permittivität
+\begin{equation*}
+[\epsilon_0]=\frac{As}{Vm}
+\end{equation*}
+\item Spannung
+\begin{equation*}
+[V]=\frac{kg\cdot m^2}{As^3}
+\end{equation*}
+\item Absolute Permeabilität
+\begin{equation*}
+[\mu_0]=\frac{\Omega s}{m}=\frac{Vs}{Am}
+\end{equation*}
+\item Magnetische Flussdichte
+\begin{equation*}
+[B]=T=\frac{Vs}{m^2}
+\end{equation*}
+\end{enumerate}
+
+\subsection{Sonstiges}
+\begin{enumerate}[label=$\bullet$]
+\item Gyrationsfrequenz:
+\begin{equation*}
+\Omega =\frac{q\cdot B}{m}
+\end{equation*}
+\item Stetigkeit
+\begin{enumerate}[label=]
+\item $\overrightarrow{E}$: Tangentialkomponente stetig
+\item $\overrightarrow{D}$: Normalkomponente stetig
+\item $\overrightarrow{B}$: Normalkomponente stetig
+\item $\overrightarrow{H}$: Tangentialkomponente stetig
+\end{enumerate}
+\end{enumerate}
+Lizenz: CC BY-NC-SA 3.0\\
+\url{http://creativecommons.org/licenses/by-nc-sa/3.0/de/}
+
+\end{document}
+
+
+
+
+
+
+
+
